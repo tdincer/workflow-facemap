@@ -18,7 +18,7 @@ convention, and directory lookup methods (see
 
 ## Workflow architecture
 
-The calcium imaging workflow presented here uses components from 4 DataJoint 
+The Facemap workflow presented here uses components from 4 DataJoint 
 Elements (`element-lab`, `element-animal`, `element-session`, 
 `element-facemap`) assembled together to form a fully functional 
 workflow. 
