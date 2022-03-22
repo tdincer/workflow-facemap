@@ -1,4 +1,4 @@
-from workflow_facemap.pipeline import fm
+from workflow_facemap.pipeline import facial_behavior_estimation
 import warnings
 
 warnings.filterwarnings('ignore')
