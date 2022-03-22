@@ -6,7 +6,7 @@ A complete facemap workflow can be built using the DataJoint Elements.
 + [element-lab](https://github.com/datajoint/element-lab)
 + [element-animal](https://github.com/datajoint/element-animal)
 + [element-session](https://github.com/datajoint/element-session)
-+ [element-calcium-imaging](https://github.com/datajoint/element-facemap)
++ [element-facemap](https://github.com/datajoint/element-facemap)
 
 This repository provides demonstrations for:
 1. Set up a workflow using DataJoint Elements (see 
