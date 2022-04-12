@@ -1,0 +1,5 @@
+subject,session_datetime,recorder,file_path,proc_file
+subject0,2022-01-01,camera1,subject0/session0/facevideo1.avi,subject0/session0/facevideo1_proc.npy
+subject1,2022-03-01,camera1,subject1/session0/facevideo2.avi,subject1/session0/facevideo2_proc.npy
+subject1,2022-03-01,camera1,subject1/session0/facevideo3.avi,subject1/session0/facevideo2_proc.npy
+subject1,2022-04-01,camera2,subject1/session1/facevideo4.avi,subject1/session1/facevideo4_proc.npy
