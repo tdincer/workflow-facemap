@@ -7,12 +7,12 @@ def get_facemap_root_data_dir():
     return pathlib.Path(data_dir) if data_dir else None
 
 
-def get_facemap_video_files(scan_key):
+def get_facemap_video_files(recording_key):
     # Folder structure: root / subject / session / .avi (raw)
     data_dir = get_facemap_root_data_dir()
 
     from .pipeline import session
-    sess_dir = data_dir / (session.SessionDirectory & scan_key).fetch1('session_dir')
+    sess_dir = data_dir / (session.SessionDirectory & recording_key).fetch1('session_dir')
 
     if not sess_dir.exists():
         raise FileNotFoundError(f'Session directory not found ({sess_dir})')

@@ -31,7 +31,9 @@ session.activate(db_prefix + 'session', linking_module=__name__)
 @lab.schema
 class Device(dj.Manual):
     definition = """
-    recorder: varchar(32) 
+    recorder_id      : smallint
+    ---
+    recorder         : varchar(32) 
     """
 
 # ------------- Activate "facemap" schema -------------
