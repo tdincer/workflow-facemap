@@ -21,7 +21,10 @@ services:
     image: workflow-facemap-dev:0.1.0a2
     container_name: workflow-facemap-dev
     environment:
-      - IMAGING_ROOT_DATA_DIR=/main/test_data/workflow_facemap/
+      - DJ_HOST=db
+      - DJ_USER=root
+      - FACEMAP_ROOT_DATA_DIR=/main/facemap_inbox/
+      - FACEMAP_PROCESSED_DATA_DIR=/main/facemap_outbox/
     volumes:
       - ${TEST_DATA_DIR}:/main/test_data
       - ./apt_requirements.txt:/tmp/apt_requirements.txt
