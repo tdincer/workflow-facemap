@@ -10,13 +10,15 @@ WORKDIR /main
 RUN mkdir /main/element-lab \
         /main/element-animal \
         /main/element-session \
+        /main/element-interface \
         /main/element-facemap \
-        /main/workflow-calcium-imaging
+        /main/workflow-facemap
 
 # Copy user's local fork of elements and workflow
 COPY --chown=anaconda:anaconda ./element-lab /main/element-lab
 COPY --chown=anaconda:anaconda ./element-animal /main/element-animal
 COPY --chown=anaconda:anaconda ./element-session /main/element-session
+COPY --chown=anaconda:anaconda ./element-interface /main/element-interface
 COPY --chown=anaconda:anaconda ./element-facemap /main/element-facemap
 COPY --chown=anaconda:anaconda ./workflow-facemap /main/workflow-facemap
 
@@ -24,6 +26,7 @@ COPY --chown=anaconda:anaconda ./workflow-facemap /main/workflow-facemap
 RUN pip install -e /main/element-lab
 RUN pip install -e /main/element-animal
 RUN pip install -e /main/element-session
+RUN pip install -e /main/element-interface
 RUN pip install -e /main/element-facemap
 RUN pip install -e /main/workflow-facemap
 RUN pip install -r /main/workflow-facemap/requirements_test.txt
