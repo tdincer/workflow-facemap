@@ -1,0 +1,33 @@
+FROM datajoint/djbase:py3.9-debian-fcd8909
+
+USER anaconda:anaconda
+
+COPY ./workflow-facemap/docker/apt_requirements.txt /tmp/
+RUN /entrypoint.sh echo "Installed dependencies."
+
+WORKDIR /main
+
+RUN mkdir /main/element-lab \
+        /main/element-animal \
+        /main/element-session \
+        /main/element-facemap \
+        /main/workflow-calcium-imaging
+
+# Copy user's local fork of elements and workflow
+COPY --chown=anaconda:anaconda ./element-lab /main/element-lab
+COPY --chown=anaconda:anaconda ./element-animal /main/element-animal
+COPY --chown=anaconda:anaconda ./element-session /main/element-session
+COPY --chown=anaconda:anaconda ./element-facemap /main/element-facemap
+COPY --chown=anaconda:anaconda ./workflow-facemap /main/workflow-facemap
+
+# Install packages
+RUN pip install -e /main/element-lab
+RUN pip install -e /main/element-animal
+RUN pip install -e /main/element-session
+RUN pip install -e /main/element-facemap
+RUN pip install -e /main/workflow-facemap
+RUN pip install -r /main/workflow-facemap/requirements_test.txt
+
+WORKDIR /main/workflow-facemap
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
